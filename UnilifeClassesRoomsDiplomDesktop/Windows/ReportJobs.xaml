@@ -1,0 +1,64 @@
+﻿<Window x:Class="UnilifeClassesRoomsDiplomDesktop.Windows.ReportJobs"
+       xmlns:dxp="http://schemas.devexpress.com/winfx/2008/xaml/printing" 
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+        xmlns:local="clr-namespace:UnilifeClassesRoomsDiplomDesktop.Windows"
+        mc:Ignorable="d" Loaded="Window_Loaded_1"
+        Title="ReportJobs" Height="450" Width="800" Foreground="{x:Null}" >
+    <Grid >
+        <dxp:DocumentPreviewControl x:Name="preview" HorizontalAlignment="Stretch"   VerticalAlignment="Stretch"/>
+    </Grid>
+    <Window.Resources>
+        <DataTemplate x:Key="HeaderTemplate">
+            <StackPanel>
+                <StackPanel.Resources>
+                    <Style TargetType="dxe:TextEdit">
+                        <Setter Property="Padding" Value="3,0,3,0" />
+                    </Style>
+                
+                </StackPanel.Resources>
+             
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition MinWidth="100"/>
+                        <ColumnDefinition MinWidth="200"/>
+                      
+                    </Grid.ColumnDefinitions>
+                    <dxe:TextEdit Foreground="White" Background="SteelBlue" BorderBrush="White" 
+                              BorderThickness="1,1,0,1" Grid.Column="0" Text="ФИО"/>
+                    <dxe:TextEdit Foreground="White" Background="SteelBlue" BorderBrush="White" 
+                              BorderThickness="1,1,0,1" Grid.Column="1" Text="Отметка"/>
+                  
+                </Grid>
+            </StackPanel>
+        </DataTemplate>
+
+        <DataTemplate x:Key="ProductsTemplate">
+            <StackPanel Orientation="Vertical">
+                <StackPanel.Resources>
+                    <Style TargetType="dxe:TextEdit">
+                        <Setter Property="Padding" Value="3,0,3,0" />
+                    </Style>
+                </StackPanel.Resources>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition MinWidth="100"/>
+                        <ColumnDefinition MinWidth="200"/>
+                        <ColumnDefinition MinWidth="200"/>
+                        <ColumnDefinition MinWidth="80"/>
+                    </Grid.ColumnDefinitions>
+                    <dxe:TextEdit BorderBrush="LightGray" BorderThickness="1,0,0,1" 
+                              Grid.Column="0" Text="{Binding Path=Content.User.Name}" 
+                              dxp:ExportSettings.Bookmark="{Binding Content.User.Name}"/>
+                    <dxe:TextEdit BorderBrush="LightGray" BorderThickness="1,0,0,1" 
+                              Grid.Column="1" Text="{Binding Path=Content.Job.Score}"/>
+                   
+                </Grid>
+            </StackPanel>
+        </DataTemplate>
+    </Window.Resources>
+</Window>

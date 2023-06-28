@@ -1,0 +1,54 @@
+﻿<Window x:Class="UnilifeClassesRoomsDiplomDesktop.Windows.UserWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UnilifeClassesRoomsDiplomDesktop.Windows"
+        mc:Ignorable="d"
+        Title="UserWindow" Height="450" Width="800">
+    
+    <Grid Background="{DynamicResource MaterialDesignPaper}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Image x:Name="PhotoUser" Grid.Column="0"  Source="{Binding PhotoImage}"/>
+
+        <StackPanel Grid.Column="1">
+            <TextBox        Foreground="#FFD2CECE"      
+                Text="{Binding Name}"
+                materialDesign:HintAssist.Hint="ФИО"             
+                FontSize="20"
+                Style="{StaticResource MaterialDesignFloatingHintTextBox}"               
+                Width="200"/>
+            <DatePicker Name="LocaleDatePicker" Foreground="#FFD2CECE" Language="ru"
+                        SelectedDate="{Binding Birthday, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                        SelectedDateFormat="Short"
+                        Width="200" FontSize="20"
+                        materialDesign:HintAssist.Hint="День рождения" />
+
+            <ComboBox x:Name="DivisionsComboBox" Foreground="#FFD2CECE" SelectedItem="{Binding Division}" 
+                      materialDesign:HintAssist.Hint="Выберите подразд."    
+                      DisplayMemberPath="Name" FontSize="20"  Width="200"/>
+            <ComboBox x:Name="PostsComboBox" Foreground="#FFD2CECE" SelectedItem="{Binding Post}" 
+                      materialDesign:HintAssist.Hint="Выберите должн."    
+                      DisplayMemberPath="Name" FontSize="20"  Width="200"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Width="200">
+                <TextBlock Text="Активен: " Foreground="#FFD2CECE" FontSize="20"/>
+                <ToggleButton FontSize="20"
+                            IsChecked="{Binding Active}"
+                            Style="{StaticResource MaterialDesignSwitchDarkToggleButton}"  
+                            ToolTip="MaterialDesignSwitchDarkToggleButton" >
+                </ToggleButton>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Bottom" Orientation="Horizontal" Grid.Row="50" Grid.Column="1" Margin="5">
+            <Button IsDefault="True" Click="Accept_Click" VerticalAlignment="Center" Width="90" Height="40" Margin="5" >OK</Button>
+            <Button IsCancel="True" VerticalAlignment="Center" Width="90" Height="40" Margin="5">Отмена</Button>
+            <Button  Click="Button_Click"  Width="180" Height="40" Margin="5">Выбрать фото</Button>
+        </StackPanel>
+    </Grid>
+</Window>

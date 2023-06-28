@@ -1,0 +1,38 @@
+﻿<Page x:Class="UnilifeClassesRoomsDiplomDesktop.Pages.ConfirmPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:local="clr-namespace:UnilifeClassesRoomsDiplomDesktop.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ConfirmPage">
+
+    <Grid Background="{DynamicResource MaterialDesignPaper}">
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+
+            <TextBox x:Name="KodTextBox" 
+                   materialDesign:HintAssist.Hint="Введите код" 
+                   HorizontalContentAlignment="Left" 
+                   HorizontalAlignment="Stretch"  
+                     Text="{Binding Key}"
+                   Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                   Width="200" Foreground="#FFD2CECE"/>
+
+            <Button Content="Подтвердить"
+                    Style="{StaticResource MaterialDesignFlatMidBgButton}"
+                    Command="{Binding ValidateKeyCommand}" Margin="0,5,0,0"/>
+        </StackPanel>
+        <!-- simplest form -->
+        <materialDesign:Snackbar
+            x:Name="SnackbarOne" 
+            IsActive="True"
+            Message="Проверьте свою почту. Вдруг что найдёшь?)" 
+            HorizontalContentAlignment="Center"/>
+
+        <Frame NavigationUIVisibility="Hidden" 
+               Name="ConfirmFrame"  
+               Content="{Binding PageFrameView}"/>
+    </Grid>
+</Page>

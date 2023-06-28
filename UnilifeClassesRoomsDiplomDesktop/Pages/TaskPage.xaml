@@ -1,0 +1,157 @@
+﻿<Page x:Class="UnilifeClassesRoomsDiplomDesktop.Pages.TaskPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:UnilifeClassesRoomsDiplomDesktop.Pages" xmlns:viewmodels="clr-namespace:UnilifeClassesRoomsDiplomDesktop.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:TaskPageViewModel}"
+      mc:Ignorable="d" 
+      d:DesignHeight="720" d:DesignWidth="1280"
+      Title="TaskPage">
+
+    <Grid Background="{DynamicResource MaterialDesignPaper}">
+        <Grid Background="{DynamicResource MaterialDesignPaper}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+
+                <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel VerticalAlignment="Stretch">
+                        <TextBlock Text="{Binding Task.Name}" FontSize="50" Foreground="DeepSkyBlue"/>
+
+                        <StackPanel Orientation="Horizontal" >
+                            <TextBlock Text="{Binding Task.Account.User.Name}" FontSize="20" Foreground="DeepSkyBlue"/>
+                            <TextBlock Text=" " FontSize="20" Foreground="DeepSkyBlue"/>
+                            <Ellipse Height="10" Width="10" Fill="Red" />
+                            <TextBlock Text=" " FontSize="20" Foreground="DeepSkyBlue"/>
+                            <TextBlock Text="{Binding Task.CreateTime,StringFormat=dd.MM.yyyy}" FontSize="20" Foreground="DeepSkyBlue"/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal"  >
+                            <TextBlock Text="{Binding Job.Score}" FontSize="20" Foreground="DeepSkyBlue"/>
+                            <TextBlock Text=" из " FontSize="20" Foreground="DeepSkyBlue"/>
+                            <TextBlock Text="{Binding Task.MaxScore}" FontSize="20" Foreground="DeepSkyBlue"/>
+                            <TextBlock Text=" Балов" FontSize="20" Foreground="DeepSkyBlue"/>
+                        </StackPanel>
+
+                        <Line HorizontalAlignment="Stretch" Stroke="DeepSkyBlue" X1="1"  X2="1000" StrokeThickness="4" Margin="0,10,0,0"  Visibility="Collapsed"/>
+                    </StackPanel>
+
+
+                    <StackPanel HorizontalAlignment="Right" Grid.Column="1">
+                        <Border BorderBrush="DeepSkyBlue"  BorderThickness="1" Padding="10">
+
+                            <StackPanel Margin="5" >
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
+                                    <TextBlock Text="Мои файлы: " FontSize="20" Foreground="DeepSkyBlue"/>
+                                    <TextBlock Text="{Binding Task.DelivaryTime,StringFormat='HH:mm dd.MM.yyyy '}" FontSize="20" HorizontalAlignment="Right" Foreground="DeepSkyBlue"/>
+                                </StackPanel >
+
+                                <ListBox x:Name="filesUserTaskList"  ItemsSource="{Binding Job.FilesJobs}" SelectedItem="{Binding SelectedFilesJob}" Background="Transparent" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch">
+                                    <ListBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock Text="{Binding Name}" FontSize="16" />
+
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </ListBox.ItemTemplate>
+                                </ListBox>
+                                <Button Command="{Binding DeleteFile}">Удалить выбранный файлл</Button>
+                                <Button x:Name="addFile" HorizontalAlignment="Stretch" Content="+ Добавить или создать" Command="{Binding AddFile}" Margin="5"/>
+                                <Button x:Name="passTask" HorizontalAlignment="Stretch" Content="{Binding SendJobButton}" Command="{Binding SendJob}" Margin="5"/>
+                            </StackPanel>
+
+                        </Border>
+                    </StackPanel>
+
+
+                </Grid>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Описание:" FontSize="20" HorizontalAlignment="Right" Foreground="DeepSkyBlue"/>
+                    <TextBlock Text="{Binding Task.Description}" FontSize="20" HorizontalAlignment="Right" Foreground="DeepSkyBlue"/>
+                </StackPanel>
+                <TextBlock Text="Файлы:" FontSize="20" HorizontalAlignment="Left" Foreground="DeepSkyBlue"/>
+                <ListBox x:Name="filesTaskList"  ItemsSource="{Binding Task.FilesTasks}" SelectedItem="{Binding SelectedFileTask}" Background="Transparent" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <TextBlock Text="{Binding Name}" FontSize="16" />
+
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+                <TextBlock Text="Ссылки:" FontSize="20" HorizontalAlignment="Left" Foreground="DeepSkyBlue"/>
+                <ListBox x:Name="linksTaskList"   ItemsSource="{Binding Task.LinksTasks}" SelectedItem="{Binding SelectedLinkTask}" Background="Transparent" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <TextBlock Text="{Binding Link}">
+                                <Hyperlink NavigateUri="{Binding Link}">
+                                <TextBlock />
+                                </Hyperlink>
+                             </TextBlock>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </StackPanel>
+            <Grid Grid.Column="2" Width="250">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Text="Чат задания." Foreground="#aeea00" FontSize="16"/>
+
+                <ListBox  MinWidth="240"  ItemsSource="{Binding Messags}" Grid.Row="1"
+                          Background="Transparent" HorizontalAlignment="Stretch" 
+                     VerticalAlignment="Stretch" >
+                    <ListBox.ItemTemplate>
+                        <DataTemplate >
+                            <StackPanel >
+                                <Border Background="#389ce7" CornerRadius="10" Padding="5">
+                                    <StackPanel  >
+                                        <TextBlock Text="{Binding Account.User.Name}" FontSize="14" />
+
+                                        <StackPanel Width="200">
+                                            <TextBlock Text="{Binding Message}" TextWrapping="Wrap" FontSize="14"
+                                                       MaxWidth="200"/>
+                                            <TextBlock Text="{Binding Time, StringFormat='HH:mm:ss dd.MM.yyyy'}" 
+                                                       FontSize="8" HorizontalAlignment="Right"/>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </Border>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+
+
+
+                <StackPanel VerticalAlignment="Bottom" Grid.Row="2">
+                    <TextBox  Text="{Binding Message}" 
+                materialDesign:HintAssist.Hint="Сообщение"             
+                FontSize="15" Foreground="#aeea00" Margin="10" MaxLength="2000"
+                Style="{StaticResource MaterialDesignFloatingHintTextBox}"               
+                Width="200"/>
+                    <Button Content="Отправить" Margin="10" Command="{Binding SendMessage}"
+                        materialDesign:ButtonAssist.CornerRadius="10"/>
+                </StackPanel>
+
+            </Grid>
+        </Grid>
+        
+        <Frame NavigationUIVisibility="Hidden" Content="{Binding PageFrameView}" Name="PageFrame"  />
+    </Grid>
+</Page>

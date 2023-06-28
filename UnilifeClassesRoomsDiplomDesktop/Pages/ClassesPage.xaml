@@ -1,0 +1,104 @@
+﻿<Page x:Class="UnilifeClassesRoomsDiplomDesktop.Pages.ClassesPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:UnilifeClassesRoomsDiplomDesktop.Pages"
+      mc:Ignorable="d" 
+
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ClassesPage">
+
+    <Grid Background="{DynamicResource MaterialDesignPaper}" >
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+
+                <Button Margin="10"  Command="{Binding AddCommand}">
+                    <materialDesign:PackIcon Kind="Plus" />
+                </Button>
+
+               
+
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,0,544,0">
+                <Button Command="{Binding SearchCommand}"
+                        Style="{StaticResource MaterialDesignToolButton}">
+                    <materialDesign:PackIcon Kind="Search"
+                                             Opacity=".56" />
+                </Button>
+
+                <TextBox Grid.Column="1" Foreground="#FFD2CECE"
+                         MinWidth="200"
+                         Text="{Binding Search}"
+                         Margin="8,0,0,0"
+                         Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                         VerticalAlignment="Center"
+                         materialDesign:HintAssist.Hint="Поиск"
+                         materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
+                         BorderThickness="0">
+                    <TextBox.InputBindings>
+                        <KeyBinding 
+                        Key="Enter" 
+                        Command="{Binding Search}" />
+                    </TextBox.InputBindings>
+                </TextBox>
+
+            </StackPanel>
+
+            <ListBox x:Name="classesList" SelectedItem="{Binding SelectedItem}"  ItemsSource="{Binding Classes}" Background="Transparent" Grid.Row="1" >
+
+                <ListBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel Margin="0,0,0,0" Orientation="Horizontal"/>
+                    </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
+
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Height="210" Width="180">
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="40"/>
+                                <RowDefinition />
+                                <RowDefinition  Height="40"/>
+                            </Grid.RowDefinitions>
+
+                            <StackPanel Grid.Row="0" >
+                                <TextBlock Text="{Binding Name}" FontSize="16" />
+
+                            </StackPanel>
+
+                            <ListBox ItemsSource="{Binding Tasks}" Grid.Row="1"  Background="Transparent" >
+
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackPanel >
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock Text="Задание: " FontSize="15"/>
+                                                <TextBlock Text="{Binding Name}" FontSize="15"/>
+                                            </StackPanel>
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock Text="Срок сдачи: " FontSize="13"/>
+                                                <TextBlock Text="{Binding DelivaryTime, StringFormat=dd-MM-yyyy}" FontSize="13"/>
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </Grid>
+
+        <Frame NavigationUIVisibility="Hidden"  Content="{Binding PageFrameView}"  Name="PageFrame" />
+
+    </Grid>
+</Page>

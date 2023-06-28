@@ -1,0 +1,43 @@
+﻿<Page x:Class="UnilifeClassesRoomsDiplomDesktop.Pages.JobPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:UnilifeClassesRoomsDiplomDesktop.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="JobPage">
+
+    <Grid Background="{DynamicResource MaterialDesignPaper}">
+        <StackPanel>
+            <TextBlock Text="{Binding User.Name}" FontSize="20" Foreground="#389ce7"/>
+
+            <StackPanel Orientation="Horizontal" >
+                <TextBlock Text="Отметка " FontSize="20" Foreground="DeepSkyBlue"/>
+                <TextBox  Width="40" Text="{Binding Job.Score}"  Style="{StaticResource MaterialDesignTextBox}"    
+                         FontSize="20" Foreground="#389ce7"/>
+                <TextBlock Text=" из " FontSize="20" Foreground="DeepSkyBlue"/>
+                <TextBlock Text="{Binding Task.MaxScore}" FontSize="20" Foreground="DeepSkyBlue"/>
+                <Button Content="Оценить" Command="{Binding SendScore}" Margin="5" />
+                <Button Content="Вернуть на дороботку" Command="{Binding SendScore}" Visibility="Collapsed" Margin="5"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Время сдачи " FontSize="20" Foreground="DeepSkyBlue" />
+                <TextBlock Text="{Binding Job.Time, StringFormat='HH:mm dd.MM.yyyy' }" FontSize="20" Foreground="DeepSkyBlue" />
+            </StackPanel>
+            <TextBlock Text="Файлы " FontSize="20" Foreground="DeepSkyBlue"/>
+            <ListBox x:Name="filesJobsList" ItemsSource="{Binding FileJobs}" SelectedItem="{Binding SelectedFileJob}" Background="Transparent" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <TextBlock Text="{Binding Name}" FontSize="16"  />
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+
+        </StackPanel>
+    </Grid>
+</Page>

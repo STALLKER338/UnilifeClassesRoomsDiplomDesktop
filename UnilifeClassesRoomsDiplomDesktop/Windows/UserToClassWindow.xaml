@@ -1,0 +1,31 @@
+﻿<Window x:Class="UnilifeClassesRoomsDiplomDesktop.Windows.UserToClassWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UnilifeClassesRoomsDiplomDesktop.Windows"
+        mc:Ignorable="d"
+        Title="UserToClassWindow" Height="450" Width="800">
+    <Grid Background="{DynamicResource MaterialDesignPaper}">
+        <StackPanel>
+            <ComboBox x:Name="AccountsComboBox" Foreground="#FFD2CECE" SelectedItem="{Binding Account}" 
+                      materialDesign:HintAssist.Hint="Выберите пользов."            
+                      DisplayMemberPath="User.Name" FontSize="20"  Width="200"/>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Width="200">
+            <TextBlock Text="Учитель: " Foreground="#FFD2CECE" FontSize="20"/>
+            <ToggleButton FontSize="20"
+                            IsChecked="{Binding Teacher}"
+                            Style="{StaticResource MaterialDesignSwitchDarkToggleButton}"  
+                            ToolTip="MaterialDesignSwitchDarkToggleButton" >
+            </ToggleButton>
+        </StackPanel>
+        </StackPanel>
+
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Bottom" Orientation="Horizontal" Grid.Row="50" Grid.Column="1" Margin="5">
+            <Button IsDefault="True" Click="Accept_Click" VerticalAlignment="Center" Width="90" Height="40" Margin="5" >OK</Button>
+            <Button IsCancel="True" VerticalAlignment="Center" Width="90" Height="40" Margin="5">Отмена</Button>
+     
+        </StackPanel>
+    </Grid>
+</Window>

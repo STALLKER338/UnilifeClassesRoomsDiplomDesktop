@@ -1,0 +1,990 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" name="UnilifeClassesRoomsDiplomServerDDL" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="NetTcpBinding_IUnilifeClassesRoomsDiplomServerDDL_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:8301/?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:8301/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8301/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/UnilifeClassesRoomsDiplomServerDLL.ModelsDB" />
+      <xsd:import schemaLocation="http://localhost:8301/?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.Windows.Media.Imaging" />
+      <xsd:import schemaLocation="http://localhost:8301/?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System.Windows.Media" />
+      <xsd:import schemaLocation="http://localhost:8301/?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/System.Windows.Media.Animation" />
+      <xsd:import schemaLocation="http://localhost:8301/?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/System.Windows" />
+      <xsd:import schemaLocation="http://localhost:8301/?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/System.Windows.Threading" />
+      <xsd:import schemaLocation="http://localhost:8301/?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/System.IO" />
+      <xsd:import schemaLocation="http://localhost:8301/?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/System" />
+      <xsd:import schemaLocation="http://localhost:8301/?xsd=xsd10" namespace="http://schemas.datacontract.org/2004/07/System.Net.Cache" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_LogInAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:LogInAccount" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_LogInAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LogInAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_ConfirmLogInAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConfirmLogInAccount" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_ConfirmLogInAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConfirmLogInAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_CheakHashKey_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheakHashKey" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_CheakHashKey_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheakHashKeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_GetAccountUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccountUser" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_GetAccountUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccountUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_GetUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUser" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_GetUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_GetAccounts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccounts" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_GetAccounts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccountsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_GetUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsers" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_GetUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_GetRoles_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoles" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_GetRoles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_LogOut_InputMessage">
+    <wsdl:part name="parameters" element="tns:LogOut" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_LogOut_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LogOutResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_UpdAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdAccount" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_UpdAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_GetPowerRole_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPowerRole" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_GetPowerRole_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPowerRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_GetRole_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRole" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_GetRole_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_AddAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddAccount" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_AddAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_GetClassesUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetClassesUser" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_GetClassesUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetClassesUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_GetTasksClassFalse_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTasksClassFalse" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_GetTasksClassFalse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTasksClassFalseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_GetTasksClass_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTasksClass" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_GetTasksClass_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTasksClassResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_СheckingTeacher_InputMessage">
+    <wsdl:part name="parameters" element="tns:СheckingTeacher" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_СheckingTeacher_OutputMessage">
+    <wsdl:part name="parameters" element="tns:СheckingTeacherResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_GetAccountsClass_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccountsClass" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_GetAccountsClass_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccountsClassResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_AddTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddTask" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_AddTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_GetJobUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetJobUser" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_GetJobUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetJobUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_GetDivisions_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDivisions" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_GetDivisions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDivisionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_AddDivision_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddDivision" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_AddDivision_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddDivisionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_UpdDivision_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdDivision" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_UpdDivision_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdDivisionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_AddMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddMessage" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_AddMessage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_GetMessages_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMessages" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_GetMessages_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMessagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_GetUsersClass_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersClass" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_GetUsersClass_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersClassResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_GetAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccount" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_GetAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_GetFileTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFileTask" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_GetFileTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFileTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_GetLinksTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLinksTask" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_GetLinksTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLinksTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_GetFilesJob_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFilesJob" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_GetFilesJob_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFilesJobResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_GetPosts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPosts" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_GetPosts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPostsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_GetSessionsAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSessionsAccount" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_GetSessionsAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSessionsAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_AddPost_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddPost" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_AddPost_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddPostResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_UpdPost_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdPost" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_UpdPost_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdPostResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_DelSession_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelSession" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_DelSession_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelSessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_UpdJob_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdJob" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_UpdJob_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdJobResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_AddUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddUser" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_AddUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_UpdUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdUser" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_UpdUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_AddUserToClass_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddUserToClass" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_AddUserToClass_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddUserToClassResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_GetClasses_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetClasses" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_GetClasses_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetClassesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_AddClass_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddClass" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_AddClass_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddClassResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_UpdClass_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdClass" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_UpdClass_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdClassResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_GetClassAccounts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetClassAccounts" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_GetClassAccounts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetClassAccountsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_AddAccountToClass_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddAccountToClass" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_AddAccountToClass_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddAccountToClassResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_UpdAccountToClass_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdAccountToClass" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_UpdAccountToClass_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdAccountToClassResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_DelAccountToClass_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelAccountToClass" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_DelAccountToClass_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelAccountToClassResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_GetDivision_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDivision" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_GetDivision_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDivisionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_GetPost_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPost" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_GetPost_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPostResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_GetJob_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetJob" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_GetJob_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetJobResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_AddJob_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddJob" />
+  </wsdl:message>
+  <wsdl:message name="IUnilifeClassesRoomsDiplomServerDDL_AddJob_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddJobResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IUnilifeClassesRoomsDiplomServerDDL">
+    <wsdl:operation name="LogInAccount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/LogInAccount" message="tns:IUnilifeClassesRoomsDiplomServerDDL_LogInAccount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/LogInAccountResponse" message="tns:IUnilifeClassesRoomsDiplomServerDDL_LogInAccount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmLogInAccount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/ConfirmLogInAccount" message="tns:IUnilifeClassesRoomsDiplomServerDDL_ConfirmLogInAccount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/ConfirmLogInAccountResponse" message="tns:IUnilifeClassesRoomsDiplomServerDDL_ConfirmLogInAccount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheakHashKey">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/CheakHashKey" message="tns:IUnilifeClassesRoomsDiplomServerDDL_CheakHashKey_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/CheakHashKeyResponse" message="tns:IUnilifeClassesRoomsDiplomServerDDL_CheakHashKey_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/GetAccountUser" message="tns:IUnilifeClassesRoomsDiplomServerDDL_GetAccountUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/GetAccountUserResponse" message="tns:IUnilifeClassesRoomsDiplomServerDDL_GetAccountUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/GetUser" message="tns:IUnilifeClassesRoomsDiplomServerDDL_GetUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/GetUserResponse" message="tns:IUnilifeClassesRoomsDiplomServerDDL_GetUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccounts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/GetAccounts" message="tns:IUnilifeClassesRoomsDiplomServerDDL_GetAccounts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/GetAccountsResponse" message="tns:IUnilifeClassesRoomsDiplomServerDDL_GetAccounts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/GetUsers" message="tns:IUnilifeClassesRoomsDiplomServerDDL_GetUsers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/GetUsersResponse" message="tns:IUnilifeClassesRoomsDiplomServerDDL_GetUsers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRoles">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/GetRoles" message="tns:IUnilifeClassesRoomsDiplomServerDDL_GetRoles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/GetRolesResponse" message="tns:IUnilifeClassesRoomsDiplomServerDDL_GetRoles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LogOut">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/LogOut" message="tns:IUnilifeClassesRoomsDiplomServerDDL_LogOut_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/LogOutResponse" message="tns:IUnilifeClassesRoomsDiplomServerDDL_LogOut_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdAccount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/UpdAccount" message="tns:IUnilifeClassesRoomsDiplomServerDDL_UpdAccount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/UpdAccountResponse" message="tns:IUnilifeClassesRoomsDiplomServerDDL_UpdAccount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPowerRole">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/GetPowerRole" message="tns:IUnilifeClassesRoomsDiplomServerDDL_GetPowerRole_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/GetPowerRoleResponse" message="tns:IUnilifeClassesRoomsDiplomServerDDL_GetPowerRole_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRole">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/GetRole" message="tns:IUnilifeClassesRoomsDiplomServerDDL_GetRole_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/GetRoleResponse" message="tns:IUnilifeClassesRoomsDiplomServerDDL_GetRole_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddAccount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/AddAccount" message="tns:IUnilifeClassesRoomsDiplomServerDDL_AddAccount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/AddAccountResponse" message="tns:IUnilifeClassesRoomsDiplomServerDDL_AddAccount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClassesUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/GetClassesUser" message="tns:IUnilifeClassesRoomsDiplomServerDDL_GetClassesUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/GetClassesUserResponse" message="tns:IUnilifeClassesRoomsDiplomServerDDL_GetClassesUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTasksClassFalse">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/GetTasksClassFalse" message="tns:IUnilifeClassesRoomsDiplomServerDDL_GetTasksClassFalse_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/GetTasksClassFalseResponse" message="tns:IUnilifeClassesRoomsDiplomServerDDL_GetTasksClassFalse_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTasksClass">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/GetTasksClass" message="tns:IUnilifeClassesRoomsDiplomServerDDL_GetTasksClass_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/GetTasksClassResponse" message="tns:IUnilifeClassesRoomsDiplomServerDDL_GetTasksClass_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="СheckingTeacher">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/СheckingTeacher" message="tns:IUnilifeClassesRoomsDiplomServerDDL_СheckingTeacher_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/СheckingTeacherResponse" message="tns:IUnilifeClassesRoomsDiplomServerDDL_СheckingTeacher_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountsClass">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/GetAccountsClass" message="tns:IUnilifeClassesRoomsDiplomServerDDL_GetAccountsClass_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/GetAccountsClassResponse" message="tns:IUnilifeClassesRoomsDiplomServerDDL_GetAccountsClass_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddTask">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/AddTask" message="tns:IUnilifeClassesRoomsDiplomServerDDL_AddTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/AddTaskResponse" message="tns:IUnilifeClassesRoomsDiplomServerDDL_AddTask_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJobUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/GetJobUser" message="tns:IUnilifeClassesRoomsDiplomServerDDL_GetJobUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/GetJobUserResponse" message="tns:IUnilifeClassesRoomsDiplomServerDDL_GetJobUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDivisions">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/GetDivisions" message="tns:IUnilifeClassesRoomsDiplomServerDDL_GetDivisions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/GetDivisionsResponse" message="tns:IUnilifeClassesRoomsDiplomServerDDL_GetDivisions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddDivision">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/AddDivision" message="tns:IUnilifeClassesRoomsDiplomServerDDL_AddDivision_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/AddDivisionResponse" message="tns:IUnilifeClassesRoomsDiplomServerDDL_AddDivision_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdDivision">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/UpdDivision" message="tns:IUnilifeClassesRoomsDiplomServerDDL_UpdDivision_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/UpdDivisionResponse" message="tns:IUnilifeClassesRoomsDiplomServerDDL_UpdDivision_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddMessage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/AddMessage" message="tns:IUnilifeClassesRoomsDiplomServerDDL_AddMessage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/AddMessageResponse" message="tns:IUnilifeClassesRoomsDiplomServerDDL_AddMessage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessages">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/GetMessages" message="tns:IUnilifeClassesRoomsDiplomServerDDL_GetMessages_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/GetMessagesResponse" message="tns:IUnilifeClassesRoomsDiplomServerDDL_GetMessages_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersClass">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/GetUsersClass" message="tns:IUnilifeClassesRoomsDiplomServerDDL_GetUsersClass_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/GetUsersClassResponse" message="tns:IUnilifeClassesRoomsDiplomServerDDL_GetUsersClass_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/GetAccount" message="tns:IUnilifeClassesRoomsDiplomServerDDL_GetAccount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/GetAccountResponse" message="tns:IUnilifeClassesRoomsDiplomServerDDL_GetAccount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFileTask">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/GetFileTask" message="tns:IUnilifeClassesRoomsDiplomServerDDL_GetFileTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/GetFileTaskResponse" message="tns:IUnilifeClassesRoomsDiplomServerDDL_GetFileTask_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLinksTask">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/GetLinksTask" message="tns:IUnilifeClassesRoomsDiplomServerDDL_GetLinksTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/GetLinksTaskResponse" message="tns:IUnilifeClassesRoomsDiplomServerDDL_GetLinksTask_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFilesJob">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/GetFilesJob" message="tns:IUnilifeClassesRoomsDiplomServerDDL_GetFilesJob_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/GetFilesJobResponse" message="tns:IUnilifeClassesRoomsDiplomServerDDL_GetFilesJob_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPosts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/GetPosts" message="tns:IUnilifeClassesRoomsDiplomServerDDL_GetPosts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/GetPostsResponse" message="tns:IUnilifeClassesRoomsDiplomServerDDL_GetPosts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSessionsAccount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/GetSessionsAccount" message="tns:IUnilifeClassesRoomsDiplomServerDDL_GetSessionsAccount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/GetSessionsAccountResponse" message="tns:IUnilifeClassesRoomsDiplomServerDDL_GetSessionsAccount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPost">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/AddPost" message="tns:IUnilifeClassesRoomsDiplomServerDDL_AddPost_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/AddPostResponse" message="tns:IUnilifeClassesRoomsDiplomServerDDL_AddPost_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdPost">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/UpdPost" message="tns:IUnilifeClassesRoomsDiplomServerDDL_UpdPost_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/UpdPostResponse" message="tns:IUnilifeClassesRoomsDiplomServerDDL_UpdPost_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelSession">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/DelSession" message="tns:IUnilifeClassesRoomsDiplomServerDDL_DelSession_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/DelSessionResponse" message="tns:IUnilifeClassesRoomsDiplomServerDDL_DelSession_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdJob">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/UpdJob" message="tns:IUnilifeClassesRoomsDiplomServerDDL_UpdJob_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/UpdJobResponse" message="tns:IUnilifeClassesRoomsDiplomServerDDL_UpdJob_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/AddUser" message="tns:IUnilifeClassesRoomsDiplomServerDDL_AddUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/AddUserResponse" message="tns:IUnilifeClassesRoomsDiplomServerDDL_AddUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/UpdUser" message="tns:IUnilifeClassesRoomsDiplomServerDDL_UpdUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/UpdUserResponse" message="tns:IUnilifeClassesRoomsDiplomServerDDL_UpdUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddUserToClass">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/AddUserToClass" message="tns:IUnilifeClassesRoomsDiplomServerDDL_AddUserToClass_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/AddUserToClassResponse" message="tns:IUnilifeClassesRoomsDiplomServerDDL_AddUserToClass_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClasses">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/GetClasses" message="tns:IUnilifeClassesRoomsDiplomServerDDL_GetClasses_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/GetClassesResponse" message="tns:IUnilifeClassesRoomsDiplomServerDDL_GetClasses_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddClass">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/AddClass" message="tns:IUnilifeClassesRoomsDiplomServerDDL_AddClass_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/AddClassResponse" message="tns:IUnilifeClassesRoomsDiplomServerDDL_AddClass_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdClass">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/UpdClass" message="tns:IUnilifeClassesRoomsDiplomServerDDL_UpdClass_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/UpdClassResponse" message="tns:IUnilifeClassesRoomsDiplomServerDDL_UpdClass_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClassAccounts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/GetClassAccounts" message="tns:IUnilifeClassesRoomsDiplomServerDDL_GetClassAccounts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/GetClassAccountsResponse" message="tns:IUnilifeClassesRoomsDiplomServerDDL_GetClassAccounts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddAccountToClass">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/AddAccountToClass" message="tns:IUnilifeClassesRoomsDiplomServerDDL_AddAccountToClass_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/AddAccountToClassResponse" message="tns:IUnilifeClassesRoomsDiplomServerDDL_AddAccountToClass_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdAccountToClass">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/UpdAccountToClass" message="tns:IUnilifeClassesRoomsDiplomServerDDL_UpdAccountToClass_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/UpdAccountToClassResponse" message="tns:IUnilifeClassesRoomsDiplomServerDDL_UpdAccountToClass_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelAccountToClass">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/DelAccountToClass" message="tns:IUnilifeClassesRoomsDiplomServerDDL_DelAccountToClass_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/DelAccountToClassResponse" message="tns:IUnilifeClassesRoomsDiplomServerDDL_DelAccountToClass_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDivision">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/GetDivision" message="tns:IUnilifeClassesRoomsDiplomServerDDL_GetDivision_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/GetDivisionResponse" message="tns:IUnilifeClassesRoomsDiplomServerDDL_GetDivision_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPost">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/GetPost" message="tns:IUnilifeClassesRoomsDiplomServerDDL_GetPost_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/GetPostResponse" message="tns:IUnilifeClassesRoomsDiplomServerDDL_GetPost_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJob">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/GetJob" message="tns:IUnilifeClassesRoomsDiplomServerDDL_GetJob_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/GetJobResponse" message="tns:IUnilifeClassesRoomsDiplomServerDDL_GetJob_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddJob">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/AddJob" message="tns:IUnilifeClassesRoomsDiplomServerDDL_AddJob_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/AddJobResponse" message="tns:IUnilifeClassesRoomsDiplomServerDDL_AddJob_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="NetTcpBinding_IUnilifeClassesRoomsDiplomServerDDL" type="tns:IUnilifeClassesRoomsDiplomServerDDL">
+    <wsp:PolicyReference URI="#NetTcpBinding_IUnilifeClassesRoomsDiplomServerDDL_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="LogInAccount">
+      <soap12:operation soapAction="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/LogInAccount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmLogInAccount">
+      <soap12:operation soapAction="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/ConfirmLogInAccount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheakHashKey">
+      <soap12:operation soapAction="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/CheakHashKey" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountUser">
+      <soap12:operation soapAction="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/GetAccountUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUser">
+      <soap12:operation soapAction="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/GetUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccounts">
+      <soap12:operation soapAction="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/GetAccounts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsers">
+      <soap12:operation soapAction="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/GetUsers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRoles">
+      <soap12:operation soapAction="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/GetRoles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogOut">
+      <soap12:operation soapAction="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/LogOut" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdAccount">
+      <soap12:operation soapAction="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/UpdAccount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPowerRole">
+      <soap12:operation soapAction="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/GetPowerRole" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRole">
+      <soap12:operation soapAction="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/GetRole" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAccount">
+      <soap12:operation soapAction="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/AddAccount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClassesUser">
+      <soap12:operation soapAction="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/GetClassesUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTasksClassFalse">
+      <soap12:operation soapAction="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/GetTasksClassFalse" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTasksClass">
+      <soap12:operation soapAction="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/GetTasksClass" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="СheckingTeacher">
+      <soap12:operation soapAction="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/СheckingTeacher" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountsClass">
+      <soap12:operation soapAction="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/GetAccountsClass" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTask">
+      <soap12:operation soapAction="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/AddTask" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJobUser">
+      <soap12:operation soapAction="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/GetJobUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDivisions">
+      <soap12:operation soapAction="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/GetDivisions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddDivision">
+      <soap12:operation soapAction="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/AddDivision" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdDivision">
+      <soap12:operation soapAction="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/UpdDivision" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddMessage">
+      <soap12:operation soapAction="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/AddMessage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessages">
+      <soap12:operation soapAction="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/GetMessages" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersClass">
+      <soap12:operation soapAction="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/GetUsersClass" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccount">
+      <soap12:operation soapAction="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/GetAccount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFileTask">
+      <soap12:operation soapAction="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/GetFileTask" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLinksTask">
+      <soap12:operation soapAction="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/GetLinksTask" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFilesJob">
+      <soap12:operation soapAction="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/GetFilesJob" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPosts">
+      <soap12:operation soapAction="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/GetPosts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSessionsAccount">
+      <soap12:operation soapAction="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/GetSessionsAccount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPost">
+      <soap12:operation soapAction="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/AddPost" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdPost">
+      <soap12:operation soapAction="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/UpdPost" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelSession">
+      <soap12:operation soapAction="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/DelSession" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdJob">
+      <soap12:operation soapAction="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/UpdJob" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUser">
+      <soap12:operation soapAction="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/AddUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdUser">
+      <soap12:operation soapAction="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/UpdUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUserToClass">
+      <soap12:operation soapAction="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/AddUserToClass" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClasses">
+      <soap12:operation soapAction="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/GetClasses" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddClass">
+      <soap12:operation soapAction="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/AddClass" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdClass">
+      <soap12:operation soapAction="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/UpdClass" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClassAccounts">
+      <soap12:operation soapAction="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/GetClassAccounts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAccountToClass">
+      <soap12:operation soapAction="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/AddAccountToClass" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdAccountToClass">
+      <soap12:operation soapAction="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/UpdAccountToClass" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelAccountToClass">
+      <soap12:operation soapAction="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/DelAccountToClass" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDivision">
+      <soap12:operation soapAction="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/GetDivision" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPost">
+      <soap12:operation soapAction="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/GetPost" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJob">
+      <soap12:operation soapAction="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/GetJob" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddJob">
+      <soap12:operation soapAction="http://tempuri.org/IUnilifeClassesRoomsDiplomServerDDL/AddJob" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="UnilifeClassesRoomsDiplomServerDDL">
+    <wsdl:port name="NetTcpBinding_IUnilifeClassesRoomsDiplomServerDDL" binding="tns:NetTcpBinding_IUnilifeClassesRoomsDiplomServerDDL">
+      <soap12:address location="net.tcp://localhost:8302/" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:8302/</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

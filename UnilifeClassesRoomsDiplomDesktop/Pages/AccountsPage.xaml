@@ -1,0 +1,91 @@
+﻿<Page x:Class="UnilifeClassesRoomsDiplomDesktop.Pages.AccountsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"  
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:UnilifeClassesRoomsDiplomDesktop.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AccountsPage">
+
+    <Grid Background="{DynamicResource MaterialDesignPaper}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+
+                <Button Margin="10"  Command="{Binding AddCommand}">
+                    <materialDesign:PackIcon Kind="Plus" />
+                </Button>
+
+                <Button Margin="10" Command="{Binding EditCommand}"
+                    CommandParameter="{Binding ElementName=accountsList, Path=SelectedItem}">
+                    <materialDesign:PackIcon Kind="ReceiptTextEdit" />
+                </Button>
+
+                <Button Margin="10" Command="{Binding SessionsCommand}"
+                    CommandParameter="{Binding ElementName=accountsList, Path=SelectedItem}">
+                    <materialDesign:PackIcon Kind="ClipboardList" />
+                </Button>
+
+                <Button Margin="10" Command="{Binding ReportCommand}">
+                    <materialDesign:PackIcon Kind="PlaylistCheck" />
+                </Button>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,0,544,0">
+                <Button Command="{Binding SearchCommand}"
+                        Style="{StaticResource MaterialDesignToolButton}">
+                    <materialDesign:PackIcon Kind="Search"
+                                             Opacity=".56" />
+                </Button>
+
+                <TextBox Grid.Column="1"
+                         MinWidth="200" Foreground="#FFD2CECE"
+                         Text="{Binding Search}"
+                         Margin="8,0,0,0"
+                         Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                         VerticalAlignment="Center"
+                         materialDesign:HintAssist.Hint="Поиск"
+                         materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
+                         BorderThickness="0">
+                    <TextBox.InputBindings>
+                        <KeyBinding 
+                        Key="Enter" 
+                        Command="{Binding Search}" />
+                    </TextBox.InputBindings>
+                </TextBox>
+
+            </StackPanel>
+
+            <DataGrid x:Name="accountsList" Grid.Row="1" ItemsSource="{Binding Accounts}" SelectedItem="{Binding SelectedItemAccount}"  AutoGenerateColumns="False" IsReadOnly="True">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding Path=Login}" Width="90">
+                        <DataGridTextColumn.Header>
+                            <Label Content="Логин"/>
+                        </DataGridTextColumn.Header>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Пароль" Binding="{Binding Path=Password}" Width="80" />
+                    <DataGridTextColumn Header="Почта" Binding="{Binding Path=Mail}" Width="130" />
+                    <DataGridTextColumn Header="Роль" Binding="{Binding Path=Role.Name}" Width="100" />
+                    <DataGridTextColumn Header="Пользователь" Binding="{Binding Path=User.Name}" Width="100" />
+                    <DataGridCheckBoxColumn Header="Активен" Binding="{Binding Path=Active}" Width="100" />
+                    <DataGridTemplateColumn Header="Иконка" Width="100">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Image  Source="{Binding Path=IconImage}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+        
+        <Frame NavigationUIVisibility="Hidden" Content="{Binding PageFrameView}" Name="PageFrame"  />
+    </Grid>
+</Page>

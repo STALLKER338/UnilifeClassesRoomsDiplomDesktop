@@ -1,0 +1,71 @@
+﻿<Window xmlns:dxp="http://schemas.devexpress.com/winfx/2008/xaml/printing"  x:Class="Unilife_ClasseRoom.Windows.Report"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Unilife_ClasseRoom.Windows"
+         Background="#272B2F" 
+      
+        xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+        mc:Ignorable="d"
+        Title="Report" Height="450" Width="800" Loaded="Window_Loaded_1">
+    <Grid>
+        <dxp:DocumentPreviewControl x:Name="preview" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch"/>
+    </Grid>
+    <Window.Resources>
+        <DataTemplate x:Key="HeaderTemplate">
+            <StackPanel>
+                <StackPanel.Resources>
+                    <Style TargetType="dxe:TextEdit">
+                        <Setter Property="Padding" Value="3,0,3,0" />
+                    </Style>
+                </StackPanel.Resources>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition MinWidth="100"/>
+                        <ColumnDefinition MinWidth="200"/>
+                        <ColumnDefinition MinWidth="200"/>
+                        <ColumnDefinition MinWidth="80"/>
+                    </Grid.ColumnDefinitions>
+                    <dxe:TextEdit Foreground="White" Background="SteelBlue" BorderBrush="White" 
+                              BorderThickness="1,1,0,1" Grid.Column="0" Text="Логин"/>
+                    <dxe:TextEdit Foreground="White" Background="SteelBlue" BorderBrush="White" 
+                              BorderThickness="1,1,0,1" Grid.Column="1" Text="Пользователь"/>
+                    <dxe:TextEdit Foreground="White" Background="SteelBlue" BorderBrush="White" 
+                              BorderThickness="1,1,0,1" Grid.Column="2" Text="Почта"/>
+                    <dxe:TextEdit Foreground="White" Background="SteelBlue" BorderBrush="White" 
+                              BorderThickness="1,1,0,1" Grid.Column="3" Text="Активность"/>
+                </Grid>
+            </StackPanel>
+        </DataTemplate>
+
+        <DataTemplate x:Key="ProductsTemplate">
+            <StackPanel Orientation="Vertical">
+                <StackPanel.Resources>
+                    <Style TargetType="dxe:TextEdit">
+                        <Setter Property="Padding" Value="3,0,3,0" />
+                    </Style>
+                </StackPanel.Resources>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition MinWidth="100"/>
+                        <ColumnDefinition MinWidth="200"/>
+                        <ColumnDefinition MinWidth="200"/>
+                        <ColumnDefinition MinWidth="80"/>
+                    </Grid.ColumnDefinitions>
+                    <dxe:TextEdit BorderBrush="LightGray" BorderThickness="1,0,0,1" 
+                              Grid.Column="0" Text="{Binding Path=Content.Login}" FontSize="14"
+                              dxp:ExportSettings.Bookmark="{Binding Content.Login}"/>
+                    <dxe:TextEdit BorderBrush="LightGray" BorderThickness="1,0,0,1" FontSize="14"
+                              Grid.Column="1" Text="{Binding Path=Content.User.Name}"/>
+                    <dxe:TextEdit BorderBrush="LightGray" BorderThickness="1,0,0,1" FontSize="14"
+                              Grid.Column="2" Text="{Binding Path=Content.Mail}" />
+                    <dxe:TextEdit BorderBrush="LightGray" BorderThickness="1,0,1,1" FontSize="14"
+                              Grid.Column="3" Text="{Binding Path=Content.Active}"/>
+                </Grid>
+            </StackPanel>
+        </DataTemplate>
+    </Window.Resources>
+</Window>
